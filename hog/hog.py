@@ -299,7 +299,16 @@ def max_scoring_num_rolls(dice=six_sided, num_samples=1000):
     10
     """
     # BEGIN PROBLEM 8
-    "*** REPLACE THIS LINE ***"
+    i = 1
+    score_list = []
+    while i <= 10:
+        average_score = make_averaged(roll_dice, num_samples=1000)(i, dice)
+        score_list.append(average_score)
+        print(i, 'dice scores', average_score, 'on average')
+        i = i + 1
+    max_value = max(score_list)
+    highest_average_rolls = score_list.index(max_value) + 1
+    return highest_average_rolls
     # END PROBLEM 8
 
 
