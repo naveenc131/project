@@ -390,10 +390,27 @@ def final_strategy(score, opponent_score):
     *** YOUR DESCRIPTION HERE ***
     """
     # BEGIN PROBLEM 11
-    "*** REPLACE THIS LINE ***"
-    return 4  # Replace this statement
+    dice_swapped = False
+    points = take_turn(0,opponent_score,select_dice(score,opponent_score,dice_swapped))
+    if points <= take_turn(bacon_strategy(score, opponent_score),opponent_score) :
+        return bacon_strategy(score, opponent_score)
+    elif points <= take_turn(swap_strategy(score, opponent_score),opponent_score):
+        
+        return swap_strategy(score, opponent_score)
+    if score > GOAL_SCORE:
+        return 2
+    elif score >= GOAL_SCORE - 10:
+        return 3
+    #If your are Leading be wary
+    elif score > opponent_score + 20:
+        return 3
+    #if you are behind take the risk
+    elif score < opponent_score - 20:
+        return 6   
+    else: 
+        return BASELINE_NUM_ROLLS
     # END PROBLEM 11
-check_strategy(final_strategy)
+#check_strategy(final_strategy)
 
 
 ##########################
