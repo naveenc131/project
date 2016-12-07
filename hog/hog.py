@@ -24,13 +24,13 @@ def roll_dice(num_rolls, dice=six_sided):
     while num_rolls > 0:
         number = dice()
         if number == 1:
-            count += 1
+            count = count + 1
         else :
             sum = sum + number
         num_rolls = num_rolls - 1
         
-    if count >= 1 :
-            return count 
+    if count > 0 :
+            return count - 1
     else :
             return sum
     "*** REPLACE THIS LINE ***"
@@ -358,10 +358,14 @@ def bacon_strategy(score, opponent_score, margin=8, num_rolls=4):
     and rolls NUM_ROLLS otherwise.
     """
     # BEGIN PROBLEM 9
-    "*** REPLACE THIS LINE ***"
-    return 4  # Replace this statement
+          
+    if take_turn(0,opponent_score) >= margin :
+        return 0
+    else :
+        return num_rolls
+        
     # END PROBLEM 9
-check_strategy(bacon_strategy)
+#check_strategy(bacon_strategy)
 
 
 def swap_strategy(score, opponent_score, margin=8, num_rolls=4):
@@ -370,10 +374,14 @@ def swap_strategy(score, opponent_score, margin=8, num_rolls=4):
     NUM_ROLLS.
     """
     # BEGIN PROBLEM 10
-    "*** REPLACE THIS LINE ***"
-    return 4  # Replace this statement
+    if score *2 == opponent_score or opponent_score*2 == 0:
+        return 0
+    else :
+        return bacon_strategy(score, opponent_score, margin, num_rolls)
+    
+
     # END PROBLEM 10
-check_strategy(swap_strategy)
+#check_strategy(swap_strategy)
 
 
 def final_strategy(score, opponent_score):
