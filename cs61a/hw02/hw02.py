@@ -28,6 +28,11 @@ def product(n, term):
     14400
     """
     "*** YOUR CODE HERE ***"
+    result = 1
+    while n > 0 :
+        result = result * term(n)
+        n = n - 1
+    return result 
 
 # The identity function, defined using a lambda expression!
 identity = lambda k: k
@@ -44,9 +49,9 @@ def factorial(n):
     True
     """
     "*** YOUR CODE HERE ***"
-    return _______
+    return product(n,identity)
 
-def make_adder(n):
+#def make_adder(n):
     """Return a function that takes an argument K and returns N + K.
 
     >>> add_three = make_adder(3)
@@ -56,4 +61,4 @@ def make_adder(n):
     3
     """
     "*** YOUR CODE HERE ***"
-    return lambda ________________
+#    return lambda 
