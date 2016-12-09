@@ -51,7 +51,7 @@ def factorial(n):
     "*** YOUR CODE HERE ***"
     return product(n,identity)
 
-#def make_adder(n):
+def make_adder(n):
     """Return a function that takes an argument K and returns N + K.
 
     >>> add_three = make_adder(3)
@@ -61,4 +61,6 @@ def factorial(n):
     3
     """
     "*** YOUR CODE HERE ***"
-#    return lambda 
+    def adder(k):
+        return n+k
+    return adder
