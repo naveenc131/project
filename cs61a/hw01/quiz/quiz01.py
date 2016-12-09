@@ -7,7 +7,12 @@ def multiple(a, b):
     42
     """
     "*** YOUR CODE HERE ***"
-
+    result = 0
+    for i in range(a,a*b+1):
+        if i % a == 0 and i % b == 0:
+            result = i
+            break
+    return result
 def unique_digits(n):
     """Return the number of unique digits in positive integer n
 
@@ -25,3 +30,11 @@ def unique_digits(n):
     2
     """
     "*** YOUR CODE HERE ***"
+    x ,y,count = 0,0,0
+    while n > 0:
+        x = n % 10
+        n = n //10
+        y = n//10
+        if x != y :
+            count = count + 1
+    return count 
