@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.contrib.auth import(
 	authenticate,
 	get_user_model,
@@ -68,7 +67,3 @@ def logout_view(request):
 #	server.sendmail(fromaddr,[toaddr],msg)
 #	server.quit()
 
-=======
-def index(request):
-	return render(request, "index.html", {})
->>>>>>> 2e5afefce48b72fed9629851cd046a391bef5076

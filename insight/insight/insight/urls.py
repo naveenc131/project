@@ -15,11 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from insight_blog import views
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('insight_blog.urls')),
-    
+    url(r'', include('insight_blog.urls'))
 ]

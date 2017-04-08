@@ -1,9 +1,5 @@
 from django import forms
 from django.forms import ModelForm
-<<<<<<< HEAD
-=======
-import re
->>>>>>> 2e5afefce48b72fed9629851cd046a391bef5076
 
 from django.contrib.auth import(
 	authenticate,
@@ -32,7 +28,6 @@ class UserLoginForm(forms.Form):
 			if not user.is_active:
 				raise ValidationError("This user is not active")
 		return super(UserLoginForm,self).clean(*args,**kwargs)
-<<<<<<< HEAD
 class UserRegisterForm(forms.ModelForm):
 	email = forms.EmailField(label='Email Address')
 	email2 = forms.EmailField(label='Email Address')
@@ -57,14 +52,4 @@ class UserRegisterForm(forms.ModelForm):
 		return email
 
 
-=======
-
-
-
-
-		
-
-			
-	
->>>>>>> 2e5afefce48b72fed9629851cd046a391bef5076
 		
